@@ -8,30 +8,30 @@
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="./assets/spy.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    
 </head>
 
 <body>
-    <div class="wrapper w-[100vw] h-[100vh] flex justify-center items-center bg-[#edeff8]">
-        <div class=" w-[40%] flex flex-col gap-6">
+    <div darkLight class="wrapper w-[100vw] h-[100vh] flex justify-center items-center bg-[#edeff8]">
+        <div darkLight class="mainContainer w-[40%] flex flex-col gap-6">
             <!-- head -->
             <div class="flex justify-between">
-                <p class="AppHead font-bold text-3xl text-gray-600">DevDetective</p>
-                <div class="DLContainer flex gap-6 justify-between items-center ">
-                    <p data-DarkLight class="uppercase text-gray-500 tracking-wide font-semibold text-sm">Dark</p>
+                <p darkLight class="AppHead font-bold text-3xl text-gray-600">DevDetective</p>
+                <div darkLight class="DLContainer flex gap-6 justify-between items-center ">
+                    <p darkLight data-DarkLight class="uppercase text-gray-500 tracking-wide font-semibold text-sm">Dark</p>
                     <button btn-DLBtn><img DLImg src="assets/moon.png" height="25px" width="25px" alt=""></button>
                 </div>
             </div>
             <!-- search container -->
-            <div class="searchContainer flex gap-2 justify-between px-2 py-1 bg-white rounded-md items-center">
+            <div darkLight class="DarkContainer searchContainer flex gap-2 justify-between px-2 py-1 bg-white rounded-md items-center">
                 <p><i class="text-[#0058CC] px-2 fa fa-solid fa-search"></i></p>
-                <input data-toSearch class="w-[90%] px-3 appearance-none focus:outline-none" type="text"
+                <input darkLight data-toSearch class="w-[90%] px-3 appearance-none focus:outline-none" type="text"
                     placeholder="Enter a GitHub username...">
                 <button btn-toSearch class="text-white bg-[#0058CC] rounded-md py-2 px-6">Search</button>
             </div>
             <!-- info container -->
-            <div class="min-h-[430px] bg-white flex justify-center items-center">
-                <div class="userDetails flex justify-between gap-6 rounded-md p-7  ">
+            <div darkLight class="DarkContainer min-h-[430px] bg-white rounded-md flex justify-center items-center">
+                <div class="userDetails justify-between gap-6  p-7 hidden ">
                     <!-- user image -->
                     <div class="px-2">
                         <img img-profileImage class="rounded-full border" src="" alt="" height="120px" width="120px">
@@ -49,7 +49,7 @@
                             adipisicing elit. Obcaecati reprehenderit natus nisi ipsam consequuntur fugit quis eaque eum
                             repellendus cum.</p>
                         <!-- user numbers -->
-                        <div class="flex bg-[#edeff8] p-4 my-3 rounded-md ">
+                        <div darkLight class="numberData flex bg-[#edeff8] p-4 my-3 rounded-md ">
                             <div class="min-w-[35%] space-y-1">
                                 <p class="text-sm text-gray-400">Repos</p>
                                 <p data-repoNum class="text-lg font-bold">11</p>
@@ -94,9 +94,14 @@
                     <img src="assets/Dual Ring_loading.gif" alt="" srcset="" height="100px" width="100px">
                 </div>
                 <!-- Not found -->
-                <div class="notFound flex-col justify-center items-center  hidden">
+                <div class="notFound flex-col gap-4 justify-center items-center  hidden">
                     <img src="./assets/not-found.png" alt="" height="100px" width="100px">
-                    <p>No User found</p>
+                    <p class="font-bold uppercase ">No User found</p>
+                </div>
+                <!-- Search container -->
+                <div class="">
+                    <img src="./assets/Search.png" alt="" height="200px" width="200px">
+                    <p class="font-bold uppercase ">Looking for someone?</p>
                 </div>
             </div>
             
@@ -104,7 +109,7 @@
         </div>
     </div>
 
-
+    <script src="script.js"></script>
 </body>
 
 </html>

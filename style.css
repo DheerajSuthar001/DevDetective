@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.bgDark1{
+/* .bgDark1{
     background-color:#0E1520 ;
 }
 .bgDark2{
@@ -10,7 +10,44 @@
 }
 .textDark{
     color: white;
-  }
+  } */
+:root{
+    --darkestBlue:#0E1520;
+    --darkBlue:#161D31;
+}
+.wrapper.dark{
+    background-color:var(--darkestBlue);
+}  
+.mainContainer.dark{
+    color: white;
+}
+.DarkContainer.dark{
+    background-color:var(--darkBlue);
+}
+.AppHead.dark{
+    color:white;
+}
+.DLContainer.dark{
+    color:white
+}
+[data-DarkLight].dark{
+    color: white;
+}
+[data-toSearch].dark{
+    background-color:var(--darkBlue);
+}
+[data-toSearch].dark::placeholder{
+    color: white;
+}
+.numberData.dark{
+    background-color:var(--darkestBlue) ;
+}
 .loading.active{
-    display: flex;
+    display: block;
   }
+.userDetails.active{
+    display: flex;
+}
+.notFound.active{
+    display: flex;
+}
