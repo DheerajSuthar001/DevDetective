@@ -5,6 +5,28 @@ const DLImage = document.querySelector("[DLImg]");
 const DarkContainers = document.querySelectorAll("[darkLight]");
 const DarkContainerCheck = document.querySelector("[darkLight]");
 const search = document.querySelector(".search");
+// search functionality
+
+const searchButton = document.querySelector("[btn-toSearch]");
+const searchData = document.querySelector("[data-toSearch]");
+const loading = document.querySelector(".loading");
+const userInfoCard = document.querySelector(".userDetails");
+const notFound = document.querySelector(".notFound");
+
+//render info card
+const profileImage = document.querySelector('[img-profileImage]');
+const userName = document.querySelector('[data-userName]');
+const joinDate = document.querySelector('[data-joinDate]');
+const userID = document.querySelector('[data-userID]');
+const userIDLink = document.querySelector('[data-userIDLink]');
+const description = document.querySelector('[data-description]');
+const repoNum = document.querySelector('[data-repoNum]');
+const followers = document.querySelector('[data-followers]');
+const following = document.querySelector('[data-following]');
+const locate = document.querySelector('[data-location]');
+const link = document.querySelector('[data-link]');
+const twitter = document.querySelector('[data-twitter]');
+const office = document.querySelector('[data-office]');
 initialPage();
 
 DLButton.addEventListener('click', renderDarkLightElements);
@@ -34,14 +56,9 @@ function initialPage() {
 
 // search functionality
 
-const searchButton = document.querySelector("[btn-toSearch]");
-const searchData = document.querySelector("[data-toSearch]");
-const loading = document.querySelector(".loading");
-const userInfoCard = document.querySelector(".userDetails");
-const notFound = document.querySelector(".notFound");
-
 searchButton.addEventListener('click', fetchUserData);
 async function fetchUserData() {
+    userInfoCard.classList.remove("active");
     notFound.classList.remove("active");
     search.classList.remove("active");
     loading.classList.add("active");
@@ -54,25 +71,15 @@ async function fetchUserData() {
         userInfoCard.classList.add("active");
     }
     else {
+        userInfoCard.classList.remove("active");
         loading.classList.remove("active");
         notFound.classList.add("active");
     }
 }
 //render info card
-const profileImage = document.querySelector('[img-profileImage]');
-const userName = document.querySelector('[data-userName]');
-const joinDate = document.querySelector('[data-joinDate]');
-const userID = document.querySelector('[data-userID]');
-const userIDLink = document.querySelector('[data-userIDLink]');
-const description = document.querySelector('[data-description]');
-const repoNum = document.querySelector('[data-repoNum]');
-const followers = document.querySelector('[data-followers]');
-const following = document.querySelector('[data-following]');
-const locate = document.querySelector('[data-location]');
-const link = document.querySelector('[data-link]');
-const twitter = document.querySelector('[data-twitter]');
-const office = document.querySelector('[data-office]');
+
 function renderUserInfo(data) {
+    twitter.classList.remove("disabled");
     profileImage.setAttribute("src", `${data?.avatar_url}`);
 
 
@@ -90,7 +97,7 @@ function renderUserInfo(data) {
     locate.textContent = data?.location === null ? 'Not Available' : data?.location;
     if(data?.repos_url!==null){
         link.textContent = "Repositery";
-        twitter.setAttribute('href', `${data?.repos_url}`);
+        link.setAttribute('href', `https://github.com/${data?.login}?tab=repositories`);
     }
     else{
         link.textContent ='Not Available';
@@ -100,7 +107,9 @@ function renderUserInfo(data) {
         twitter.setAttribute('href', `https://x.com/${data?.twitter_username}`);
     }
     else{
-        twitter.textContent = "Repositery";
+        twitter.textContent = "Not Available";
+        twitter.classList.add("disabled");
+    
     }
     office.textContent = data?.company === null ? 'Not Available' : data?.company;
 
@@ -109,5 +118,5 @@ function renderUserInfo(data) {
 }
 function parseDate(dateString) {
     const dateObject = new Date(dateString);
-    return `${dateObject.getDate()} ${dateObject.toLocaleString('default', { month: 'short' })} ${dateObject.getYear()}`;
+    return `${dateObject.getDate()} ${dateObject.toLocaleString('default', { month: 'short' })} ${dateObject.getFullYear()}`;
 }
