@@ -2,3 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+.bgDark1{
+    background-color:#0E1520 ;
+}
+.bgDark2{
+    background-color:#161D31;
+}
+.textDark{
+    color: white;
+}
