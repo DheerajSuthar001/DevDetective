@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Detective</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./assets/spy.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+
+<body>
+    <div class="w-[100vw] h-[100vh] flex justify-center items-center bg-[#edeff8]">
+        <div class="w-[40%] flex flex-col gap-6">
+            <!-- head -->
+            <div class="flex justify-between">
+                <p class="font-bold text-3xl text-gray-600">DevDetective</p>
+                <div class="DLContainer flex gap-6 justify-between items-center ">
+                    <p data-DarkLight class="uppercase text-gray-500 tracking-wide font-semibold text-sm">Dark</p>
+                    <button btn-DLBtn><img DLImg src="assets/moon.png" height="25px" width="25px" alt=""></button>
+                </div>
+            </div>
+            <!-- search container -->
+            <div class="searchContainer flex gap-2 justify-between px-2 py-1 bg-white rounded-md items-center">
+                <p><i class="text-[#0058CC] px-2 fa fa-solid fa-search"></i></p>
+                <input data-toSearch class="w-[90%] px-3 appearance-none focus:outline-none" type="text"
+                    placeholder="Enter a GitHub username...">
+                <button btn-toSearch class="text-white bg-[#0058CC] rounded-md py-2 px-6">Search</button>
+            </div>
+            <!-- info container -->
+
+            <div class="flex justify-between gap-6 rounded-md p-7 bg-white">
+                <div class="">
+                    <img img-profileImage class="rounded-full border" src="" alt="" height="120px" width="120px">
+                </div>
+                
+                <div class="flex flex-col gap-1 w-[70%]">
+                    <div class="flex justify-between items-baseline">
+                        <p data-userName class="text-2xl font-bold capitalize">Dheeraj Suthar</p>
+                        <p class="text-gray-500 tracking-wide text-sm">Joined <span data-joinDate>16 June 2023</span>
+                        </p>
+                    </div>
+                    <a class="text-[#0058CC] font-semibold underline" href="">@<span data-userID></span>dheeraj001</a>
+                    <p data-description class="text-sm text-gray-400 my-5">Lorem, ipsum dolor sit amet consectetur
+                        adipisicing elit. Obcaecati reprehenderit natus nisi ipsam consequuntur fugit quis eaque eum
+                        repellendus cum.</p>
+                    <div class="flex bg-[#edeff8] p-4 my-3 rounded-md ">
+                        <div class="min-w-[35%] space-y-1">
+                            <p class="text-sm text-gray-400">Repos</p>
+                            <p data-repoNum class="text-lg font-bold">11</p>
+                        </div>
+                        <div class="min-w-[35%] space-y-1">
+                            <p class="text-sm text-gray-400">Followers</p>
+                            <p data-repoNum class="text-lg font-bold">2345</p>
+                        </div>
+                        <div class="min-w-[35%] space-y-1">
+                            <p class="text-sm text-gray-400">Following</p>
+                            <p data-repoNum class="text-lg font-bold">11</p>
+                        </div>
+                        
+                    </div>
+                    <div class="grid grid-cols-2  px-6 gap-3 py-4">
+                        <div class="">
+                            <i class="text-gray-400 px-2 fas fa-map-marker-alt"></i>
+                            <span data-location class="linkDetails text-gray-400">new delhi</span>
+                        </div>
+                        <div class="">
+                            <i class="text-gray-400 px-2 fas fa-link"></i>
+                            <span  class="linkDetails text-gray-400 underline"><a data-link href="">Not_Available</a></span>
+                        </div>
+                        <div class="">
+                            <i class="text-gray-400 px-2 fa-brands fa-twitter"></i>  
+                            <span data-location class="linkDetails text-gray-400 underline"><a data-link href="">Not_Available</a></span>
+                        </div>
+                        <div class="">
+                            <i class="text-gray-400 px-2 fas fa-building"></i>
+                            <span data-location class="linkDetails text-gray-400">Not_Available</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
