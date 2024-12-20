@@ -42,6 +42,7 @@
 .numberData.dark{
     background-color:var(--darkestBlue) ;
 }
+
 .loading.active{
     display: block;
   }
@@ -50,4 +51,7 @@
 }
 .notFound.active{
     display: flex;
+}
+.search.active{
+    display: block;
 }

@@ -5,7 +5,7 @@ const DLImage=document.querySelector("[DLImg]");
 const DarkContainers=document.querySelectorAll("[darkLight]");
 const DarkContainerCheck=document.querySelector("[darkLight]");
 
- 
+initialPage();
 
 DLButton.addEventListener('click',renderDarkLightElements);
 function renderDarkLightElements(){
@@ -24,4 +24,10 @@ function renderDarkLightElements(){
         DLImage.setAttribute("src","assets/moon.png")
     }
     
+}
+// initial page
+
+function initialPage(){
+    const search=document.querySelector(".search");
+    search.classList.add("active");
 }
