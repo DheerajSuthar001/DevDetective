@@ -10,4 +10,7 @@
 }
 .textDark{
     color: white;
-}
+  }
+.loading.active{
+    display: flex;
+  }
